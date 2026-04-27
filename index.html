@@ -1,74 +1,820 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rupak Chandra Bhowmick | Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rupak Chandra Bhowmick — AI Engineer specializing in Agentic AI, LLMs, RAG, and production-grade ML systems." />
+  <meta name="author" content="Rupak Chandra Bhowmick" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>Rupak Chandra Bhowmick — AI Engineer</title>
+
+  <!-- Preconnect & fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-    <main>
-        <!---------------------------------------
-                    Navbar 
-        ----------------------------------->
-        <nav class="navbar">
-            <div class="navbar-left">
-              <span class="navbar-brand">Rupak Chandra Bhowmick</span>
-            </div>
-            <div class="navbar-right">
-              <a class="navbar-item" id="blk-col" href="index.html">Home</a>
-              <a class="navbar-item" href="html/education.html">Education</a>
-              <a class="navbar-item" href="html/certification.html">Certification</a>
-              <a class="navbar-item" href="html/experience.html">Experience</a>
-              <a class="navbar-item" href="html/tutorials.html">Tutorials</a>
-              <a class="navbar-item" href="html/Research.html">Research</a>
-            </div>
-          </nav>
-        <!-------------------------------------------------------------------
-             Profile section 
-        --------------------------------------------->
-        <div class="container">
-            <div class="left-column">
-              <img class="image" src="images/image.JPG" alt="Image">
-              <figure class="text-center">
-                <blockquote class="blockquote">
-                  <p>Favourite quote : " Where there's a will, there's a way "</p>
-                </blockquote>
-                <figcaption class="blockquote-footer">
-                   <cite title="Source Title">George Herbert</cite>
-                </figcaption>
-              </figure>
-            </div>
-            <div class="right-column">
-              <h1 class="header-name">Hello there, This is Rupak Chandra Bhowmick !</h1>
-              <li class="header"><strong>Graduated</strong>  with BSc. degree in Computer Science & Engineering (CSE) from Rajshahi University of Engineering & Technology (RUET).</li>
-              <br>
-              <li class="header">Currently working on different data driven predictive, analytical projects .</li>
-              <br>
-              <li class="header"> <b>Research Interests:</b>  Data Mining, Machine Learning, Deep Learning, Data Analytics.</li>
-              <li class="header"><b>Latest Publication:</b></li>
-            </div>
-          </div>
-          <div>
-            <span class="badge text-bg-warning">To know more about me :</span>
-            <br><br>
-            <a class="btn btn-primary" href="https://www.linkedin.com/in/rupak-chandra-bhowmick-405a1a1bb/" role="button">linkedin</a> 
-            <a class="btn btn-primary" href="https://github.com/Rupak167" role="button">Github</a>
-            <a class="btn btn-danger" href="https://www.youtube.com/@LearnWithRupak-gv1uv" role="button">Youtube</a>
-            <a class="btn btn-primary" href="https://www.kaggle.com/rupakchandrabhowmick" role="button">kaggle</a>
-            
-            <br>
-            <br>
-          </div>
-          <div>
-            <h1 class="display-6">Recent Updates!</h1> <hr>
+
+  <!-- Animated background -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+  <!-- ============== NAVBAR ============== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__brand">
+        <span class="nav__brand-mark">RB</span>
+        <span class="nav__brand-text">Rupak Chandra Bhowmick</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#experience" class="nav__link">Experience</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#journal" class="nav__link">Journal</a>
+        <a href="#publications" class="nav__link">Research</a>
+        <a href="#contact" class="nav__link nav__link--cta">Contact</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============== HERO ============== -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="eyebrow"><span class="dot"></span> Available for new opportunities</span>
+          <h1 class="hero__title">
+            Hi, I'm <span class="grad">Rupak</span>.<br />
+            I build <span class="grad-2">AI systems</span> that ship to production.
+          </h1>
+          <p class="hero__lead">
+            AI Engineer with <strong>2.5+ years</strong> designing and shipping production-grade systems across
+            <strong>LLMs, Agentic AI, RAG, and Computer Vision.</strong> Core contributor to the
+            <a href="#" class="link-inline">GraphBit</a> Agentic AI framework and lead engineer on
+            <em>PRFlow</em> — a multi-agent GitHub PR review product.
+          </p>
+
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary"><i class="fa-solid fa-arrow-right-long"></i> View my work</a>
+            <a href="#contact" class="btn btn--ghost"><i class="fa-regular fa-paper-plane"></i> Get in touch</a>
           </div>
 
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+          <div class="hero__socials">
+            <a href="https://github.com/Rupak167" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/rupak-chandra-41cg/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.kaggle.com/rupakchandrabhowmick" target="_blank" rel="noopener" aria-label="Kaggle"><i class="fa-brands fa-kaggle"></i></a>
+            <a href="https://www.youtube.com/@LearnWithRupak-gv1uv" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="mailto:rupak.cseruet1102@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="agent-term" aria-hidden="true">
+            <div class="agent-term__bar">
+              <span class="agent-term__dot agent-term__dot--r"></span>
+              <span class="agent-term__dot agent-term__dot--y"></span>
+              <span class="agent-term__dot agent-term__dot--g"></span>
+              <span class="agent-term__title">rupak.agent — zsh</span>
+              <span class="agent-term__pill"><span class="live-dot"></span> live</span>
+            </div>
+            <div class="agent-term__body" id="termBody">
+              <!-- typed by JS -->
+            </div>
+            <div class="agent-term__avatar">
+              <img src="images/image-2.png" alt="Rupak" />
+            </div>
+            <div class="agent-term__glow"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container hero__stats">
+        <div class="stat"><span class="stat__num">2.5+</span><span class="stat__label">Years experience</span></div>
+        <div class="stat"><span class="stat__num">15+</span><span class="stat__label">Production AI projects</span></div>
+        <div class="stat"><span class="stat__num">6</span><span class="stat__label">Languages supported in PRFlow</span></div>
+        <div class="stat"><span class="stat__num">1</span><span class="stat__label">IEEE publication</span></div>
+      </div>
+    </section>
+
+    <!-- ============== ABOUT ============== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__kicker">01 — About</span>
+          <h2 class="section__title">A bit about me</h2>
+        </div>
+
+        <div class="about">
+          <div class="about__text">
+            <p>
+              I'm an AI Engineer based in Dhaka, Bangladesh. My focus is on the messy, exciting
+              gap between cutting-edge models and reliable production systems — designing
+              <strong>multi-agent architectures</strong>, <strong>retrieval pipelines</strong>,
+              and <strong>scalable backends</strong> that actually hold up under real workloads.
+            </p>
+            <p>
+              Currently a Software Engineer at <strong>InfinitiBit Ltd.</strong>, where I'm a core contributor
+              to the <strong>GraphBit</strong> Agentic AI framework and lead engineer on
+              <strong>PRFlow</strong>, a production multi-agent GitHub PR reviewer. I work across the full stack of
+              modern AI: prompt &amp; context engineering, semantic memory (Mem0 + Qdrant),
+              token budgeting, multi-LLM failover, observability, and billing.
+            </p>
+            <p>
+              Before that, I led AI at <strong>Deep Mind Labs</strong>, shipping computer vision and
+              NLP systems across healthcare, surveillance, and the poultry industry. I enjoy
+              mentoring, leading small teams, and turning fuzzy product ideas into clean,
+              maintainable architecture.
+            </p>
+          </div>
+
+          <aside class="about__card">
+            <h3>Quick facts</h3>
+            <ul class="kv">
+              <li><span>Location</span><b>Dhaka, Bangladesh</b></li>
+              <li><span>Role</span><b>AI / Software Engineer</b></li>
+              <li><span>Focus</span><b>Agentic AI · LLM · RAG · CV</b></li>
+              <li><span>Education</span><b>BSc CSE, RUET</b></li>
+              <li><span>Email</span><b><a href="mailto:rupak.cseruet1102@gmail.com">rupak.cseruet1102@gmail.com</a></b></li>
+              <li><span>Phone</span><b>+880 187 807 6262</b></li>
+            </ul>
+            <a href="https://drive.google.com/file/d/1k-wRag80iwABYSrDZsEcDqJ4didOPeTd/view?usp=drive_link" class="btn btn--ghost btn--sm" download>
+              <i class="fa-solid fa-file-arrow-down"></i> Download resume
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== EXPERIENCE ============== -->
+    <section class="section section--alt" id="experience">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__kicker">02 — Experience</span>
+          <h2 class="section__title">Where I've worked</h2>
+        </div>
+
+        <ol class="timeline">
+
+          <li class="tl-item">
+            <div class="tl-marker"></div>
+            <div class="tl-card">
+              <div class="tl-card__head">
+                <div>
+                  <h3>Software Engineer</h3>
+                  <p class="tl-company">InfinitiBit Ltd. · <span>Dhaka, Bangladesh</span></p>
+                </div>
+                <span class="badge badge--accent">Oct 2025 – Present</span>
+              </div>
+              <ul class="tl-bullets">
+                <li><strong>GraphBit Framework:</strong> Core contributor to GraphBit, a high-performance Agentic AI framework powering production agents — runtime, agent execution and tool integration.</li>
+                <li><strong>PRFlow — Lead Engineer:</strong> Designed and delivered a multi-agent GitHub PR review agent on GraphBit with multi-LLM failover (Azure OpenAI, Anthropic, OpenAI) and a single-pass unified review pipeline.</li>
+                <li><strong>Context Engine &amp; Token Budgeting:</strong> Built file classification, language-aware scope detection across 6 languages, and weighted context-window allocation with tiktoken accounting.</li>
+                <li><strong>Semantic Memory:</strong> Mem0 + Qdrant subsystem with diff-enriched query construction, parallel async retrieval and agent-callable memory tools.</li>
+                <li><strong>Platform Backend:</strong> Agent run orchestration, subscription management, token-based billing and trace/observability services.</li>
+              </ul>
+              <div class="tags">
+                <span>GraphBit</span><span>Agentic AI</span><span>Multi-Agent</span><span>RAG</span>
+                <span>Mem0</span><span>Qdrant</span><span>FastAPI</span><span>Python</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="tl-item">
+            <div class="tl-marker"></div>
+            <div class="tl-card">
+              <div class="tl-card__head">
+                <div>
+                  <h3>Lead AI Engineer</h3>
+                  <p class="tl-company">Deep Mind Labs Ltd. · <span>Dhaka, Bangladesh</span></p>
+                </div>
+                <span class="badge">Apr 2025 – Sep 2025</span>
+              </div>
+              <ul class="tl-bullets">
+                <li>Led AI R&amp;D, managing a team of engineers and interns and driving delivery of AI solutions.</li>
+                <li>Shipped large-scale ML across computer vision, NLP and real-time video analysis.</li>
+                <li>Built fault-tolerant infrastructure with Redis, Celery and microservices for high-throughput production workloads.</li>
+                <li>Owned strategic decisions on AI projects, balancing business goals and technical feasibility.</li>
+              </ul>
+              <div class="tags">
+                <span>Team Leadership</span><span>RAG</span><span>Agentic AI</span>
+                <span>Deep Learning</span><span>MLOps</span><span>Microservices</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="tl-item">
+            <div class="tl-marker"></div>
+            <div class="tl-card">
+              <div class="tl-card__head">
+                <div>
+                  <h3>AI Engineer</h3>
+                  <p class="tl-company">Deep Mind Labs Ltd. · <span>Dhaka, Bangladesh</span></p>
+                </div>
+                <span class="badge">Aug 2023 – Mar 2025</span>
+              </div>
+              <ul class="tl-bullets">
+                <li><strong>NLP &amp; LLMs:</strong> Designed and deployed advanced RAG, agentic RAG and multi-agent architectures. Built a medical AI agent that suggests diagnoses, computes risk factors and tracks patient improvement.</li>
+                <li><strong>ML &amp; Computer Vision:</strong> Object detection, facial recognition (FaceNet, ArcFace), and activity tracking. Used MLflow for experimentation.</li>
+                <li><strong>Scalable Pipelines:</strong> Training, inference and data pipelines integrated with FAISS / ChromaDB for semantic retrieval.</li>
+                <li><strong>System Design:</strong> Microservices on FastAPI / Django (CLEAN architecture), Docker, Celery, Redis, RabbitMQ, NGINX, PostgreSQL.</li>
+                <li><strong>Leadership:</strong> Mentored interns and junior engineers; led AI projects and ran in-house knowledge sessions.</li>
+              </ul>
+              <div class="tags">
+                <span>LLMs</span><span>RAG</span><span>OpenCV</span><span>FastAPI</span>
+                <span>Django</span><span>Docker</span><span>Celery</span><span>PostgreSQL</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="tl-item">
+            <div class="tl-marker"></div>
+            <div class="tl-card">
+              <div class="tl-card__head">
+                <div>
+                  <h3>Content Representative · Senior Team Member</h3>
+                  <p class="tl-company">Shabash Fakibaj LLC · <span>Dhaka, Bangladesh</span></p>
+                </div>
+                <span class="badge">May 2022 – Mar 2023</span>
+              </div>
+              <ul class="tl-bullets">
+                <li>Supervised a team of eight, coordinating task assignments, content planning and seminar execution.</li>
+              </ul>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============== PROJECTS ============== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__kicker">03 — Projects</span>
+          <h2 class="section__title">Selected work</h2>
+          <p class="section__sub">A mix of agentic AI, deep learning and computer vision projects shipped to production.</p>
+        </div>
+
+        <div class="projects">
+
+          <article class="proj proj--feature">
+            <div class="proj__head">
+              <span class="proj__icon"><i class="fa-solid fa-code-pull-request"></i></span>
+              <span class="proj__period">2025 — Present</span>
+            </div>
+            <h3>PRFlow — Multi-Agent GitHub PR Reviewer</h3>
+            <p>Production multi-agent system on the GraphBit framework: conversation + review agents with multi-LLM failover, a unified single-pass review pipeline, language-aware context engine across 6 languages, and Mem0 + Qdrant semantic memory for repository-aware reviews.</p>
+            <ul class="proj__points">
+              <li>Multi-LLM failover across Azure OpenAI, Anthropic and OpenAI</li>
+              <li>Token-budgeted context windows via tiktoken accounting</li>
+              <li>Diff-enriched semantic retrieval with parallel async pipelines</li>
+            </ul>
+            <div class="tags">
+              <span>GraphBit</span><span>Agentic AI</span><span>Mem0</span><span>Qdrant</span><span>Python</span>
+            </div>
+          </article>
+
+          <article class="proj">
+            <div class="proj__head">
+              <span class="proj__icon"><i class="fa-solid fa-stethoscope"></i></span>
+              <span class="proj__period">Dec 2024 — Present</span>
+            </div>
+            <h3>Healthcare Agent &amp; ROM Assessment</h3>
+            <p>Treatment recommendation system for musculoskeletal disease using a fine-tuned LLM, plus a RAG-based diagnostic chatbot and DL models for Range-of-Motion assessment.</p>
+            <div class="tags"><span>LLM</span><span>RAG</span><span>Deep Learning</span><span>Agent</span></div>
+          </article>
+
+          <article class="proj">
+            <div class="proj__head">
+              <span class="proj__icon"><i class="fa-solid fa-shield-halved"></i></span>
+              <span class="proj__period">Aug 2023 — Sep 2024</span>
+            </div>
+            <h3>SafeGaze — Object Filtering</h3>
+            <p>Scalable microservice system using deep learning to filter target objects from images, with automated schedulers for scraping and data prep, and custom fine-tuning for accuracy.</p>
+            <div class="tags"><span>Deep Learning</span><span>Microservice</span><span>Docker</span><span>MLOps</span></div>
+          </article>
+
+          <article class="proj">
+            <div class="proj__head">
+              <span class="proj__icon"><i class="fa-solid fa-egg"></i></span>
+              <span class="proj__period">Jun 2024 — Present</span>
+            </div>
+            <h3>Poultry Industry Monitoring</h3>
+            <p>Egg detection, color classification and tracking from RTSP streams with 99–100% accuracy. Full pipeline with Celery beat scheduling, WebSocket streaming and PostgreSQL storage.</p>
+            <div class="tags"><span>OpenCV</span><span>Django</span><span>Celery</span><span>WebSocket</span></div>
+          </article>
+
+          <article class="proj">
+            <div class="proj__head">
+              <span class="proj__icon"><i class="fa-solid fa-building-shield"></i></span>
+              <span class="proj__period">Oct 2024 — Present</span>
+            </div>
+            <h3>Banking Office Monitoring</h3>
+            <p>Real-time people detection, tracking and activity analysis. Working on threat detection, face recognition and person re-identification.</p>
+            <div class="tags"><span>Deep Learning</span><span>Face Recognition</span><span>Re-ID</span></div>
+          </article>
+
+          <article class="proj">
+            <div class="proj__head">
+              <span class="proj__icon"><i class="fa-solid fa-car"></i></span>
+              <span class="proj__period">Sep 2023 — Nov 2023</span>
+            </div>
+            <h3>Vehicle Monitoring System</h3>
+            <p>YOLOv8-based vehicle detection and counting on a custom 4-class dataset, served from a Django (CLEAN architecture) backend with HTML/Bootstrap frontend.</p>
+            <div class="tags"><span>YOLOv8</span><span>Django</span><span>Object Detection</span></div>
+            <a class="proj__link" href="https://github.com/Rupak167/vehicle_counter_clean_architecture_api" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i> View on GitHub
+            </a>
+          </article>
+
+          <article class="proj">
+            <div class="proj__head">
+              <span class="proj__icon"><i class="fa-solid fa-hand"></i></span>
+              <span class="proj__period">Mar 2024</span>
+            </div>
+            <h3>EMG Hand Gesture Classification</h3>
+            <p>Pre-processed and analyzed EMG time-series data across 15 gesture classes; built and evaluated ML models with windowing and ensemble methods.</p>
+            <div class="tags"><span>Time Series</span><span>ML</span><span>Signal Processing</span></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== SKILLS ============== -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__kicker">04 — Skills</span>
+          <h2 class="section__title">Tech I work with</h2>
+        </div>
+
+        <div class="skills">
+          <div class="skill-card">
+            <div class="skill-card__title"><i class="fa-solid fa-robot"></i> AI / LLM &amp; Agentic AI</div>
+            <div class="chips">
+              <span>LLMs</span><span>RAG</span><span>Agentic AI</span><span>Multi-Agent</span>
+              <span>Prompt Engineering</span><span>Fine-tuning</span><span>Embeddings</span>
+              <span>Tool Use</span><span>GraphBit</span><span>LangChain</span><span>OpenAI</span>
+              <span>Azure OpenAI</span><span>Anthropic</span><span>Hugging Face</span><span>tiktoken</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__title"><i class="fa-solid fa-brain"></i> ML &amp; Deep Learning</div>
+            <div class="chips">
+              <span>PyTorch</span><span>TensorFlow</span><span>Keras</span><span>Scikit-learn</span>
+              <span>MLflow</span><span>ONNX</span><span>NumPy</span><span>pandas</span>
+              <span>SciPy</span><span>Matplotlib</span><span>Seaborn</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__title"><i class="fa-solid fa-eye"></i> Computer Vision</div>
+            <div class="chips">
+              <span>OpenCV</span><span>YOLOv8</span><span>FaceNet</span><span>ArcFace</span>
+              <span>Object Detection</span><span>Tracking</span><span>Activity Recognition</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__title"><i class="fa-solid fa-database"></i> Vector &amp; Memory Stores</div>
+            <div class="chips">
+              <span>Mem0</span><span>Qdrant</span><span>FAISS</span><span>ChromaDB</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__title"><i class="fa-solid fa-server"></i> Backend &amp; APIs</div>
+            <div class="chips">
+              <span>FastAPI</span><span>Django</span><span>REST APIs</span><span>WebSockets</span>
+              <span>Microservices</span><span>CLEAN Arch</span><span>Celery</span>
+              <span>Redis</span><span>RabbitMQ</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__title"><i class="fa-solid fa-code"></i> Languages</div>
+            <div class="chips">
+              <span>Python</span><span>C++</span><span>JavaScript</span><span>SQL</span><span>HTML/CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__title"><i class="fa-solid fa-cloud"></i> DevOps &amp; Cloud</div>
+            <div class="chips">
+              <span>Docker</span><span>Nginx</span><span>Linux</span><span>GitHub Actions</span>
+              <span>AWS EC2</span><span>AWS S3</span><span>PostgreSQL</span><span>MySQL</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__title"><i class="fa-solid fa-toolbox"></i> Tools</div>
+            <div class="chips">
+              <span>VS Code</span><span>Jupyter</span><span>Git</span><span>Jira</span>
+              <span>Postman</span><span>Overleaf</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== JOURNAL ============== -->
+    <section class="section" id="journal">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__kicker">05 — Journal</span>
+          <h2 class="section__title">Field notes &amp; life events</h2>
+          <p class="section__sub">Short posts about what I'm building, learning, and living through. <a class="link-inline" href="posts.html">See all posts &rarr;</a></p>
+        </div>
+
+        <div id="journalGrid" class="journal-grid">
+          <div class="journal-empty">
+            <i class="fa-regular fa-file-lines"></i>
+            <p>Loading recent posts…</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== PUBLICATIONS & EDUCATION ============== -->
+    <section class="section section--alt" id="publications">
+      <div class="container two-col">
+        <div>
+          <div class="section__head">
+            <span class="section__kicker">05 — Publications</span>
+            <h2 class="section__title">Research</h2>
+          </div>
+
+          <article class="pub-card">
+            <span class="pub-card__tag">IEEE &middot; ICCIT 2023</span>
+            <h3>mRNA Multiple Subcellular Localization Prediction by Employing Random Forest in Conjunction with Feature Selection via Elastic Net</h3>
+            <p class="pub-card__authors">
+              Bhowmick, R. C., Sadad, N. U., Mondal, M. N. I., &amp; Hasan, M. A. M.
+            </p>
+            <p class="pub-card__venue">26th International Conference on Computer and Information Technology (ICCIT), pp. 1–6, IEEE, 2023.</p>
+            <a class="pub-card__link" href="https://doi.org/10.1109/ICCIT60459.2023.10441183" target="_blank" rel="noopener">
+              <i class="fa-solid fa-up-right-from-square"></i> View publication
+            </a>
+          </article>
+        </div>
+
+        <div>
+          <div class="section__head">
+            <span class="section__kicker">06 — Education</span>
+            <h2 class="section__title">Background</h2>
+          </div>
+
+          <div class="edu-card">
+            <div class="edu-card__head">
+              <h3>Rajshahi University of Engineering &amp; Technology (RUET)</h3>
+              <span class="badge">Feb 2018 – Jul 2023</span>
+            </div>
+            <p>BSc in Computer Science &amp; Engineering · CGPA 3.03 / 4.00</p>
+            <p class="muted">Rajshahi, Bangladesh</p>
+          </div>
+
+          <div class="edu-card">
+            <div class="edu-card__head">
+              <h3>Tejgaon College, Dhaka</h3>
+              <span class="badge">Jun 2015 – Apr 2017</span>
+            </div>
+            <p>Higher Secondary School Certificate · GPA 5.00 / 5.00</p>
+            <p class="muted">Dhaka, Bangladesh</p>
+          </div>
+
+          <div class="edu-card edu-card--soft">
+            <h4>Relevant Coursework</h4>
+            <p>Data Structures · Database Management · Artificial Intelligence · Applied Statistics · Data Mining · Algorithm Analysis · OOP · Computer Networks</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CONTACT ============== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="cta">
+          <div class="cta__copy">
+            <span class="section__kicker">07 — Contact</span>
+            <h2 class="section__title">Let's build something together.</h2>
+            <p>I'm open to roles, collaborations and interesting AI problems — especially anything around agentic systems, RAG, or production ML.</p>
+            <div class="cta__buttons">
+              <a class="btn btn--primary" href="mailto:rupak.cseruet1102@gmail.com"><i class="fa-regular fa-envelope"></i> rupak.cseruet1102@gmail.com</a>
+              <a class="btn btn--ghost" href="tel:+8801878076262"><i class="fa-solid fa-phone"></i> +880 187 807 6262</a>
+            </div>
+          </div>
+
+          <div class="cta__socials">
+            <a href="https://github.com/Rupak167" target="_blank" rel="noopener" class="social-card">
+              <i class="fa-brands fa-github"></i><div><b>GitHub</b><span>@Rupak167</span></div>
+            </a>
+            <a href="https://www.linkedin.com/in/rupak-chandra-41cg/" target="_blank" rel="noopener" class="social-card">
+              <i class="fa-brands fa-linkedin"></i><div><b>LinkedIn</b><span>rupak-chandra-41cg</span></div>
+            </a>
+            <a href="https://www.kaggle.com/rupakchandrabhowmick" target="_blank" rel="noopener" class="social-card">
+              <i class="fa-brands fa-kaggle"></i><div><b>Kaggle</b><span>rupakchandrabhowmick</span></div>
+            </a>
+            <a href="https://www.youtube.com/@LearnWithRupak-gv1uv" target="_blank" rel="noopener" class="social-card">
+              <i class="fa-brands fa-youtube"></i><div><b>YouTube</b><span>Learn With Rupak</span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>
+        © <span id="year"></span> Rupak Chandra Bhowmick. Built with <i class="fa-solid fa-heart"></i> in Dhaka.
+        <span class="footer__hint"><kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>K</kbd> to navigate</span>
+      </p>
+      <div class="footer__right">
+        <a href="posts.html" class="footer__link">Journal</a>
+        <a href="admin.html" class="footer__link footer__link--mute" rel="nofollow" title="Author console">·</a>
+        <a href="#home" class="back-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============== COMMAND PALETTE ============== -->
+  <div class="palette" id="palette" hidden>
+    <div class="palette__backdrop" data-close></div>
+    <div class="palette__panel" role="dialog" aria-modal="true" aria-label="Command palette">
+      <div class="palette__inputwrap">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="paletteInput" type="text" placeholder="Jump to a section, project, or link…" autocomplete="off" />
+        <kbd>esc</kbd>
+      </div>
+      <ul class="palette__list" id="paletteList"></ul>
+      <div class="palette__foot">
+        <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+        <span><kbd>↵</kbd> open</span>
+        <span><kbd>esc</kbd> close</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('is-open');
+      navToggle.classList.toggle('is-open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('is-open');
+        navToggle.classList.remove('is-open');
+      })
+    );
+
+    // Nav shadow on scroll
+    const navEl = document.getElementById('nav');
+    const onScroll = () => navEl.classList.toggle('is-scrolled', window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Scroll-spy
+    const sections = ['about','experience','projects','skills','publications','contact']
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+    const linkMap = {};
+    document.querySelectorAll('.nav__link').forEach(l => {
+      const id = l.getAttribute('href').replace('#','');
+      linkMap[id] = l;
+    });
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting && linkMap[e.target.id]) {
+          Object.values(linkMap).forEach(x => x.classList.remove('is-active'));
+          linkMap[e.target.id].classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    sections.forEach(s => spy.observe(s));
+
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll('.section, .tl-item, .proj, .skill-card, .pub-card, .edu-card, .stat, .hero__content, .hero__visual');
+    revealEls.forEach(el => el.classList.add('reveal'));
+    const reveal = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          reveal.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => reveal.observe(el));
+
+    /* =========================================================
+       Animated AI agent terminal in the hero
+       ========================================================= */
+    (function termAnimation() {
+      const body = document.getElementById('termBody');
+      if (!body) return;
+      const lines = [
+        { t: 'cmd', text: '$ whoami' },
+        { t: 'out', text: '→ Rupak Chandra Bhowmick · AI Engineer @ InfinitiBit' },
+        { t: 'cmd', text: '$ stack --top' },
+        { t: 'out', text: '→ Agentic AI · LLMs · RAG · Multi-Agent · CV' },
+        { t: 'cmd', text: '$ agent.ask "what are you building?"' },
+        { t: 'out', text: '→ PRFlow — a multi-agent GitHub PR reviewer' },
+        { t: 'out', text: '   on the GraphBit framework, with semantic memory.' },
+        { t: 'cmd', text: '$ status' },
+        { t: 'ok',  text: '✓ shipping · ✓ learning · ✓ open to collab' }
+      ];
+
+      const speedChar = 18;
+      const pauseLine = 380;
+
+      function makeLine(line) {
+        const div = document.createElement('div');
+        div.className = 'tline tline--' + line.t;
+        body.appendChild(div);
+        return div;
+      }
+      async function typeInto(el, text) {
+        for (let i = 0; i < text.length; i++) {
+          el.textContent += text[i];
+          await new Promise(r => setTimeout(r, speedChar));
+        }
+      }
+      async function loop() {
+        // run once on load; loop subtly
+        while (true) {
+          body.innerHTML = '';
+          const cursor = document.createElement('span');
+          cursor.className = 'tcursor';
+          for (const line of lines) {
+            const el = makeLine(line);
+            body.appendChild(cursor);
+            await typeInto(el, line.text);
+            await new Promise(r => setTimeout(r, pauseLine));
+          }
+          await new Promise(r => setTimeout(r, 4500));
+        }
+      }
+      // Only animate if visible & motion allowed
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) {
+        body.innerHTML = lines.map(l => `<div class="tline tline--${l.t}">${l.text}</div>`).join('');
+      } else {
+        loop();
+      }
+    })();
+
+    /* =========================================================
+       Journal: load recent posts on home page
+       ========================================================= */
+    (async function loadJournalRecent() {
+      const grid = document.getElementById('journalGrid');
+      if (!grid) return;
+      try {
+        const res = await fetch('posts/posts.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error('No posts.json');
+        const data = await res.json();
+        const posts = (data.posts || []).slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+        if (!posts.length) throw new Error('empty');
+        grid.innerHTML = posts.slice(0, 3).map(p => `
+          <a class="journal-card" href="posts.html?slug=${encodeURIComponent(p.slug)}">
+            <div class="journal-card__meta">
+              <time>${formatDate(p.date)}</time>
+              ${(p.tags || []).slice(0,2).map(t => `<span>#${escapeHTML(t)}</span>`).join('')}
+            </div>
+            <h3>${escapeHTML(p.title)}</h3>
+            <p>${escapeHTML(p.excerpt || '')}</p>
+            <span class="journal-card__more">Read note <i class="fa-solid fa-arrow-right-long"></i></span>
+          </a>
+        `).join('');
+      } catch (err) {
+        grid.innerHTML = `
+          <div class="journal-empty">
+            <i class="fa-regular fa-pen-to-square"></i>
+            <p>No posts yet. <a href="admin.html" class="link-inline">Write the first one</a>.</p>
+          </div>`;
+      }
+    })();
+
+    function formatDate(s) {
+      if (!s) return '';
+      const d = new Date(s);
+      if (isNaN(d)) return s;
+      return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+    function escapeHTML(s) {
+      return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    /* =========================================================
+       Command palette  (⌘/Ctrl + K)
+       ========================================================= */
+    (function palette() {
+      const items = [
+        { label: 'Home',         hint: 'Top of page',         href: '#home',         icon: 'fa-house' },
+        { label: 'About',        hint: 'Who I am',            href: '#about',        icon: 'fa-user' },
+        { label: 'Experience',   hint: 'Work history',        href: '#experience',   icon: 'fa-briefcase' },
+        { label: 'Projects',     hint: 'Selected work',       href: '#projects',     icon: 'fa-rocket' },
+        { label: 'Skills',       hint: 'Tech stack',          href: '#skills',       icon: 'fa-code' },
+        { label: 'Journal',      hint: 'Recent posts',        href: '#journal',      icon: 'fa-feather' },
+        { label: 'All posts',    hint: 'Open posts page',     href: 'posts.html',    icon: 'fa-book-open' },
+        { label: 'Research',     hint: 'Publications',        href: '#publications', icon: 'fa-microscope' },
+        { label: 'Contact',      hint: 'Get in touch',        href: '#contact',      icon: 'fa-paper-plane' },
+        { label: 'GitHub',       hint: 'github.com/Rupak167', href: 'https://github.com/Rupak167', icon: 'fa-brands fa-github', external: true },
+        { label: 'LinkedIn',     hint: 'linkedin.com/in/rupak-chandra-41cg', href: 'https://www.linkedin.com/in/rupak-chandra-41cg/', icon: 'fa-brands fa-linkedin', external: true },
+        { label: 'Email Rupak',  hint: 'rupak.cseruet1102@gmail.com', href: 'mailto:rupak.cseruet1102@gmail.com', icon: 'fa-envelope' }
+      ];
+
+      const root  = document.getElementById('palette');
+      const input = document.getElementById('paletteInput');
+      const list  = document.getElementById('paletteList');
+      let active = 0;
+
+      function render(filter = '') {
+        const f = filter.trim().toLowerCase();
+        const matched = !f ? items : items.filter(i =>
+          i.label.toLowerCase().includes(f) || (i.hint || '').toLowerCase().includes(f)
+        );
+        active = 0;
+        list.innerHTML = matched.length ? matched.map((i, idx) => `
+          <li class="palette__item ${idx === 0 ? 'is-active' : ''}" data-href="${i.href}" data-external="${!!i.external}">
+            <i class="fa-solid ${i.icon.startsWith('fa-brands') ? '' : ''} ${i.icon}"></i>
+            <div><b>${escapeHTML(i.label)}</b><span>${escapeHTML(i.hint || '')}</span></div>
+            <kbd>↵</kbd>
+          </li>
+        `).join('') : `<li class="palette__empty">No results</li>`;
+      }
+      function open() {
+        root.hidden = false; root.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        input.value = ''; render(); setTimeout(() => input.focus(), 30);
+      }
+      function close() {
+        root.hidden = true; root.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+      function go(item) {
+        if (!item) return;
+        const href = item.dataset.href;
+        const external = item.dataset.external === 'true';
+        close();
+        if (href.startsWith('#')) {
+          const target = document.querySelector(href);
+          target && target.scrollIntoView({ behavior: 'smooth' });
+        } else if (external) {
+          window.open(href, '_blank', 'noopener');
+        } else {
+          window.location.href = href;
+        }
+      }
+
+      window.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+          e.preventDefault();
+          root.hidden ? open() : close();
+        } else if (!root.hidden) {
+          if (e.key === 'Escape') { e.preventDefault(); close(); }
+          else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            const items = [...list.querySelectorAll('.palette__item')];
+            if (!items.length) return;
+            items[active]?.classList.remove('is-active');
+            active = (active + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length;
+            items[active].classList.add('is-active');
+            items[active].scrollIntoView({ block: 'nearest' });
+          } else if (e.key === 'Enter') {
+            e.preventDefault();
+            const cur = list.querySelectorAll('.palette__item')[active];
+            cur && go(cur);
+          }
+        }
+      });
+      input?.addEventListener('input', e => render(e.target.value));
+      list?.addEventListener('click', e => {
+        const li = e.target.closest('.palette__item');
+        if (li) go(li);
+      });
+      root?.querySelector('[data-close]')?.addEventListener('click', close);
+    })();
+  </script>
 </body>
 </html>

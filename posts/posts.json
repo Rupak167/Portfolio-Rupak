@@ -1,0 +1,11 @@
+{
+  "posts": [
+    {
+      "slug": "hello-world",
+      "title": "Hello, world — and welcome to my journal",
+      "excerpt": "A short note on why I'm starting a public journal as an AI engineer, what I'll write about, and how this whole thing is wired up.",
+      "date": "2026-04-27",
+      "tags": ["meta", "writing"]
+    }
+  ]
+}

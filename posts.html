@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Field notes and life events from Rupak Chandra Bhowmick." />
+  <title>Journal — Rupak Chandra Bhowmick</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+  <header class="nav is-scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">
+        <span class="nav__brand-mark">RB</span>
+        <span class="nav__brand-text">Rupak Chandra Bhowmick</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="index.html#about" class="nav__link">About</a>
+        <a href="index.html#experience" class="nav__link">Experience</a>
+        <a href="index.html#projects" class="nav__link">Projects</a>
+        <a href="index.html#skills" class="nav__link">Skills</a>
+        <a href="posts.html" class="nav__link is-active">Journal</a>
+        <a href="index.html#publications" class="nav__link">Research</a>
+        <a href="index.html#contact" class="nav__link nav__link--cta">Contact</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="subpage">
+      <div class="container">
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left-long"></i> Back to home</a>
+
+        <!-- LIST VIEW -->
+        <div id="postsListView">
+          <div class="subpage-head">
+            <span class="section__kicker">Journal</span>
+            <h1>Field notes &amp; life events</h1>
+            <p>Short, honest posts about what I'm building, learning, and living through.</p>
+          </div>
+          <div id="postsList" class="posts-list">
+            <div class="journal-empty"><i class="fa-regular fa-circle-notch fa-spin"></i><p>Loading posts…</p></div>
+          </div>
+        </div>
+
+        <!-- POST VIEW -->
+        <article id="postView" class="post-article" hidden>
+          <h1 id="postTitle"></h1>
+          <div class="post-article__meta">
+            <time id="postDate"></time>
+            <span id="postTags"></span>
+          </div>
+          <div id="postBody" class="post-article__body"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Rupak Chandra Bhowmick.</p>
+      <a href="index.html" class="footer__link">Home</a>
+    </div>
+  </footer>
+
+  <!-- Markdown renderer -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js" crossorigin="anonymous"></script>
+  <!-- DOMPurify for sanitizing rendered HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js" crossorigin="anonymous"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle (shared across pages)
+    (function () {
+      const t = document.getElementById('navToggle');
+      const l = document.getElementById('navLinks');
+      if (!t || !l) return;
+      t.addEventListener('click', () => {
+        const open = l.classList.toggle('is-open');
+        t.classList.toggle('is-open', open);
+        t.setAttribute('aria-expanded', String(open));
+      });
+      l.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        l.classList.remove('is-open'); t.classList.remove('is-open');
+      }));
+    })();
+
+    function escapeHTML(s){return String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+    function fmtDate(s){if(!s)return '';const d=new Date(s);return isNaN(d)?s:d.toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});}
+
+    // Strip YAML frontmatter from markdown
+    function stripFrontmatter(md) {
+      if (md.startsWith('---')) {
+        const end = md.indexOf('\n---', 3);
+        if (end !== -1) return md.slice(end + 4).replace(/^\s+/, '');
+      }
+      return md;
+    }
+
+    async function loadList() {
+      const list = document.getElementById('postsList');
+      try {
+        const res = await fetch('posts/posts.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        const posts = (data.posts || []).slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+        if (!posts.length) {
+          list.innerHTML = `<div class="journal-empty"><i class="fa-regular fa-pen-to-square"></i><p>No posts yet.</p></div>`;
+          return;
+        }
+        list.innerHTML = posts.map(p => `
+          <a class="post-row" href="?slug=${encodeURIComponent(p.slug)}">
+            <time>${fmtDate(p.date)}</time>
+            <div class="post-row__title">
+              <h3>${escapeHTML(p.title)}</h3>
+              <p>${escapeHTML(p.excerpt || '')}</p>
+            </div>
+            <div class="post-row__tags">
+              ${(p.tags || []).map(t => `<span>#${escapeHTML(t)}</span>`).join('')}
+            </div>
+          </a>
+        `).join('');
+      } catch (e) {
+        list.innerHTML = `<div class="journal-empty"><i class="fa-regular fa-circle-xmark"></i><p>Couldn't load posts.</p></div>`;
+      }
+    }
+
+    async function loadPost(slug) {
+      const listView = document.getElementById('postsListView');
+      const postView = document.getElementById('postView');
+      try {
+        const [meta, md] = await Promise.all([
+          fetch('posts/posts.json', { cache: 'no-store' }).then(r => r.json()),
+          fetch(`posts/${encodeURIComponent(slug)}.md`, { cache: 'no-store' }).then(r => {
+            if (!r.ok) throw new Error('not found');
+            return r.text();
+          })
+        ]);
+        const entry = (meta.posts || []).find(p => p.slug === slug) || {};
+        document.getElementById('postTitle').textContent = entry.title || slug;
+        document.getElementById('postDate').textContent  = fmtDate(entry.date);
+        document.getElementById('postTags').innerHTML    = (entry.tags || []).map(t => `<span class="post-row__tags"><span>#${escapeHTML(t)}</span></span>`).join(' ');
+        const html = marked.parse(stripFrontmatter(md));
+        document.getElementById('postBody').innerHTML = DOMPurify.sanitize(html);
+        document.title = (entry.title || slug) + ' — Rupak Chandra Bhowmick';
+        listView.hidden = true;
+        postView.hidden = false;
+      } catch (err) {
+        listView.hidden = false;
+        postView.hidden = true;
+        const list = document.getElementById('postsList');
+        list.innerHTML = `<div class="journal-empty"><i class="fa-regular fa-circle-xmark"></i><p>Post not found.</p></div>`;
+      }
+    }
+
+    const params = new URLSearchParams(location.search);
+    const slug = params.get('slug');
+    if (slug) loadPost(slug);
+    else loadList();
+  </script>
+</body>
+</html>
